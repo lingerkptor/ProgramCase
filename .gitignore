@@ -1,5 +1,7 @@
 # eclipse相關檔案
 .classpath
+.project
+.settings/
 
 # intellij idea 相關檔案
 .idea/
