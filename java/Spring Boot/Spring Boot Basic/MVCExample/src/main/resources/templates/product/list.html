@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>產品清單</title>
+</head>
+<body>
+<span th:text="'商品數量：' + ${productCount}"></span>
+<table border="soldier">
+    <tr>
+        <th>產品序號</th>
+        <th>產品名稱</th>
+        <th>產品價格</th>
+        <th>產品數量</th>
+    </tr>
+    <tr th:each="product : ${productList}">
+        <td th:text="${product.getId()}">產品序號</td>
+        <td th:text="${product.getProductName()}">產品名稱</td>
+        <td th:text="${product.getPrice()}">產品價格</td>
+        <td th:text="${product.getCount()}">產品數量</td>
+    </tr>
+</table>
+
+
+</body>
+</html>

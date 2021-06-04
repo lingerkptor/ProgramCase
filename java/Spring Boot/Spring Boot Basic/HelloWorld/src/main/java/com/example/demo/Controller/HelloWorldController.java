@@ -1,12 +1,17 @@
 package com.example.demo.Controller;
 
-import com.example.demo.bean.PersonInfo;
+import com.example.demo.config.bean.PersonInfo;
+import com.example.demo.config.bean.testPersonList;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * Copyright ©, 2020-$(YEAR), lingerkptor
@@ -22,11 +27,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloWorldController {
 
-    private PersonInfo personInfo;
-
-    public HelloWorldController(@Autowired PersonInfo personInfo) {
-        this.personInfo = personInfo;
-    }
 
     @RequestMapping("/hello")
     @ResponseBody
@@ -39,20 +39,9 @@ public class HelloWorldController {
 
     @RequestMapping("/helloworld")
     public String helloWorld(Model model) throws Exception {
-        model.addAttribute("mav", "HelloWorldController ,Spring Boot!");
+        model.addAttribute("mav", "HelloWorld Controller ,Spring Boot!");
         //檢視(view)的位置和名稱，檢視位於example資料夾下，檢視檔案為hello.html。
         return "example/hello";
-    }
-
-
-
-    @GetMapping("/getPersonInfo")
-    @ResponseBody
-    public String getPersonInfo() {
-        return "{" +
-                "  \"name\":" + personInfo.getName() +
-                ",  \"age\":" + personInfo.getAge() +
-                "}";
     }
 
 }

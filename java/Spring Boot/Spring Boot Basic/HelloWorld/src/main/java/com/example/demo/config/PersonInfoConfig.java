@@ -1,13 +1,12 @@
-package com.example.demo;
+package com.example.demo.config;
 
-import com.example.demo.bean.PersonInfo;
-import com.example.demo.bean.testPersonList;
+import com.example.demo.config.bean.PersonInfo;
+import com.example.demo.config.bean.testPersonList;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**

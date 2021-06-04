@@ -1,8 +1,6 @@
-package com.example.demo.bean;
+package com.example.demo.config.bean;
 
 import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 /**
  * Copyright ©, 2020-$(YEAR), lingerkptor

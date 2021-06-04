@@ -2,5 +2,3 @@
   thymeleaf:
     encoding: UTF-8
     cache: false #快取 開發期間建議關閉
-  profiles:
-    active: dev

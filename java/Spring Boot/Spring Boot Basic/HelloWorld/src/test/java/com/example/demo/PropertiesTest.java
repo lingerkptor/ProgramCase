@@ -1,16 +1,14 @@
 package com.example.demo;
 
-import com.example.demo.bean.PersonInfo;
-import com.example.demo.bean.testPersonList;
+import com.example.demo.config.bean.PersonInfo;
+import com.example.demo.config.bean.testPersonList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 
