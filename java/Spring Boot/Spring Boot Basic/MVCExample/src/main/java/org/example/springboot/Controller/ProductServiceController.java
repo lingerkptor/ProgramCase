@@ -48,7 +48,7 @@ public class ProductServiceController {
     public ModelAndView getProductList() {
         ModelAndView modelAndView = this.listPageModelViewFactory();
         modelAndView.addObject("productList", productService.getProductList());
-        modelAndView.addObject("productCount",productService.getProductCount());
+        modelAndView.addObject("productCount", productService.getProductCount());
         return modelAndView;
     }
 

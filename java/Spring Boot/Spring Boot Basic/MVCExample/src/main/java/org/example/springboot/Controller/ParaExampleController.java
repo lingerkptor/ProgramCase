@@ -8,8 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 /**
  * Copyright ©, 2020 - 2021, lingerkptor
@@ -25,8 +23,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("paraExample/product")
 public class ParaExampleController {
-    private ParaExampleProductService paraExampleProductService;
 
+    private ParaExampleProductService paraExampleProductService;
     public ParaExampleController(@Autowired ParaExampleProductService paraExampleProductService) {
         this.paraExampleProductService = paraExampleProductService;
     }

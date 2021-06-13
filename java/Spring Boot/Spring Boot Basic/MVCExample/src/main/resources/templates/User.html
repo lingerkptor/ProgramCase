@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOW</title>
+</head>
+<body>
+<table th:object="${userForm}">
+    <tr>
+        <td>name:</td>
+        <td th:text="${userForm.getName()}"></td>
+    </tr>
+    <tr>
+        <td>age:</td>
+        <td th:text="${userForm.getAge()}"></td>
+    </tr>
+    <tr>
+        <td>email:</td>
+        <td th:text="${userForm.getEmail()}"></td>
+    </tr>
+    <tr>
+        <td>password:</td>
+        <td th:text="${userForm.getPassword()}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -56,7 +56,7 @@ public interface ProductService {
      * 增加產品數量
      *
      * @param id        產品序號
-     * @param addNumber 增加的數量
+     * @param count 增加的數量
      * @return 產品
      */
     public void setProductCount(String id, int count)throws ProductNonExist;

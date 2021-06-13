@@ -1,8 +1,8 @@
 package org.example.springboot.bean;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+
 
 /**
  * Copyright ©, 2020 - 2021, lingerkptor
