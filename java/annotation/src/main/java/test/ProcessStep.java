@@ -1,10 +1,16 @@
 package test;
 
+import java.lang.reflect.Method;
+
 public abstract class ProcessStep {
     public void step1() {
         String value=null;
         try {
-            value = this.getClass().getMethod("step2").getAnnotation(ABC.class).value();
+            Class subClass = this.getClass();
+            Method step2Method = subClass.getDeclaredMethod("step2");// 取得方法(被封裝的也可以找的到)
+            step2Method.setAccessible(false); // 移除存取權限的保護機制
+            value = step2Method.getAnnotation(ABC.class).value();
+            step2Method.setAccessible(true); // 回復存取權限的保護機制
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
@@ -14,7 +20,7 @@ public abstract class ProcessStep {
 
 
 
-    protected abstract void step2();
+    abstract void step2();
 
 
 }
