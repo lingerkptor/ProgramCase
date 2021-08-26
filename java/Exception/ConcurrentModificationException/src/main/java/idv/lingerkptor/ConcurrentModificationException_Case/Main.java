@@ -39,20 +39,22 @@ public  class Main {
         List<String> subList = origin.subList(2,5);
         origin.add("testString add String");//修改原List物件
         System.out.println("stringList size()=>"+origin.size());
+//        System.out.flush();
         try{
             System.out.println("subList size()=>"+subList.size());
         }catch(ConcurrentModificationException e){
             System.err.println("testcase1 Exception: start");
-            System.err.println("Exception message: "+e.getMessage());
+            e.printStackTrace();
             System.err.println("呼叫subList.size()時發生的錯誤．");
             System.err.println("testcase1 Exception: end");
             System.err.println();
+//            System.err.flush();
         }
         System.out.println("testcase1 end");
     }
     /**
      * 修改subList內的元素後
-     * 迴圈內發生的ConcurrentModificationException
+     * 迴圈發生的ConcurrentModificationException
      * @param origin 原始List
      */
     private void testcase2(List<String> origin) {
@@ -62,18 +64,20 @@ public  class Main {
         System.out.println("subList size()=>"+subList.size());
         System.out.println();
         try{
-            for(String str:subList){
+            for(String str:origin){
                 System.out.print(" "+str+" ");
                 subList.remove(2);
             }
         }catch(ConcurrentModificationException e){
             System.err.println("testcase2 Exception: start");
-            System.err.println("Exception message: "+e.getMessage());
-            System.err.println("呼叫subList.remove(2);後，迴圈內發生的錯誤，");
+            e.printStackTrace();
+            System.err.println("呼叫subList.remove(2);後，迴圈發生的錯誤，");
             System.err.println("testcase2 Exception: end");
             System.err.println();
+        }finally {
+            System.out.println("\ntestcase2 end");
         }
-        System.out.println("\ntestcase2 end");
+
     }
 
     /**
@@ -91,7 +95,7 @@ public  class Main {
             }
         }catch(ConcurrentModificationException e){
             System.err.println("testcase3 Exception: start");
-            System.err.println("Exception message: "+e.getMessage());
+            e.printStackTrace();
             System.err.println("呼叫origin.remove(2);後，迴圈內發生的錯誤，");
             System.err.println("testcase3 Exception: end");
             System.err.println();
