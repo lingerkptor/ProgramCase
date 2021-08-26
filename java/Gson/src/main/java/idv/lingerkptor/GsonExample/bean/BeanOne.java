@@ -2,6 +2,9 @@ package idv.lingerkptor.GsonExample.bean;
 
 import java.util.List;
 
+/**
+ * 範例物件
+ */
 public class BeanOne {
 
 	private String stringOne = null, stringTwo = null;
