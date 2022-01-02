@@ -1,0 +1,45 @@
+spring:
+  quartz:
+    # 還有jdbc 模式
+    job-store-type: memory
+#    jdbc:
+#      initialize-schema: always
+    properties:
+      org:
+        quartz:
+          scheduler:
+            # 預設的行程名稱
+            instance: 456123
+            rmi:
+              export: false
+              proxy: false
+            instanceId: AUTO
+          jobStore:
+#           如果使用jdbc做儲存媒介，可以使用org.quartz.impl.jdbcjobstore.JobStoreCTX
+#           或 org.quartz.impl.jdbcjobstore.JobStoreTX
+            class: org.quartz.simpl.RAMJobStore
+#            jdbc代理類別
+#            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#             資料表前綴
+#            tablePrefix: QRTZ_
+#            datasource: qzDS
+            misfireThreshold: 60000
+          threadPool:
+            # thread pool 類別名稱
+            class: org.quartz.simpl.SimpleThreadPool
+            # pool size
+            threadCount: 10
+            # 執行續權重
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+          datasource:
+            qzDS:
+              driver: com.mysql.jdbc.Driver
+              URL:
+              user:
+              password:
+              maxConnections:
+  swagger:
+    enable: true
+    version: 1.0
+    package: org.example.quartz
