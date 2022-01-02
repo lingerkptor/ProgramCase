@@ -1,0 +1,46 @@
+spring:
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never # 註: 目前還找不到alway的正確使用方式。
+#      comment-prefix: '#'
+#      schema: classpath:rebuild.sql
+    properties:
+      org:
+        quartz:
+          scheduler:
+            # 預設的行程名稱
+            instanceName: Test_Schedule
+            instanceId: AUTO
+          jobStore:
+#           如果使用jdbc做儲存媒介，可以使用org.quartz.impl.jdbcjobstore.JobStoreCTX (由Container來管理交易)
+#           或 org.quartz.impl.jdbcjobstore.JobStoreTX (由自己管理)
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#            jdbc代理類別
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#            資料表前綴
+            tablePrefix: QRTZ_
+            dataSource: qzDS
+            isClustered: true
+            clusterCheckinInterval: 10000
+          threadPool:
+#            thread pool 類別名稱
+            class: org.quartz.simpl.SimpleThreadPool
+#            pool size
+            threadCount: 10
+#            執行續權重
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+          dataSource:
+            qzDS:
+              driver: org.mariadb.jdbc.Driver
+              URL: jdbc:mariadb://192.168.56.102:3306/quartz
+#              URL: jdbc:mariadb://192.168.56.102:3306/quartz;INIT=RUNSCRIPT FROM 'classpath:rebuild.sql'
+              user: quartz
+              password: 951poling
+              maxConnections: 3
+              validationQuery: select 1
+  swagger:
+    enable: true
+    version: 1.0
+    package: org.example.quartz
