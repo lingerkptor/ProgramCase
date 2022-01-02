@@ -25,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ParaExampleController {
 
     private ParaExampleProductService paraExampleProductService;
+
     public ParaExampleController(@Autowired ParaExampleProductService paraExampleProductService) {
         this.paraExampleProductService = paraExampleProductService;
     }
@@ -38,7 +39,7 @@ public class ParaExampleController {
      * @param id    產品ID
      * @return 導向product/show
      */
-    @RequestMapping(value = {"/{id}", ""}, method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getProduct(Model model, @PathVariable("id") String id) {
         model.addAttribute("product", paraExampleProductService.getProduct(id));
         return "product/show";
@@ -75,10 +76,11 @@ public class ParaExampleController {
     /**
      * Json 物件做為參數(已轉換成物件)
      * 新增商品
+     *
      * @param product 產品
      * @return 產品清單 之後會透過@ResponseBody轉成JSON字串
      */
-    @RequestMapping(value = "/addProduct",method = RequestMethod.POST)
+    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     @ResponseBody
     public Object[] addProduct(@RequestBody Product product) {
         return paraExampleProductService.addProduct(product);

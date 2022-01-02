@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.example.demo.config.bean;
 
 import lombok.Data;
 
