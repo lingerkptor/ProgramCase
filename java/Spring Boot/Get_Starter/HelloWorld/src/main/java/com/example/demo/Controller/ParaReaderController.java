@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.config.bean.ParaObjectBean;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
