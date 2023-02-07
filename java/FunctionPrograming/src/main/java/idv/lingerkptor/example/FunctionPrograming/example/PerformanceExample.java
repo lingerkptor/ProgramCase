@@ -19,22 +19,25 @@ public class PerformanceExample {
 
     private Random random = new Random();
 
-    public void doSomething() {
-//        CasQueue<Rectangle> casQueue = new CasQueue<>(THREAD_COUNT);
-//        averageWorkerTime("CasQueue", this::pureQueueTestPerformanceTest, casQueue);
-//
-//        LockQueue<Rectangle> lockQueue = new LockQueue<>();
-//        averageWorkerTime("LockQueue", this::pureQueueTestPerformanceTest, lockQueue);
-//
-//        LinkedBlockingQueue<Rectangle> linkedBlockingQueue = new LinkedBlockingQueue<>();
-//        averageWorkerTime("BlockingQueue", this::blockingQueueTestPerformanceTest, linkedBlockingQueue);
-
-//        BetterCasQueue<Rectangle> betterCasQueue = new BetterCasQueue<>(THREAD_COUNT);
-//        averageWorkerTime("BetterCasQueue", this::pureQueueTestPerformanceTest, betterCasQueue);
-
-//        BetterLockQueue<Rectangle> betterLockQueue = new BetterLockQueue<>();
-//        averageWorkerTime("BetterLockQueue", this::pureQueueTestPerformanceTest, betterLockQueue);
-
+    public void casQueueBenchmark() {
+        CasQueue<Rectangle> casQueue = new CasQueue<>(THREAD_COUNT);
+        averageWorkerTime("CasQueue", this::pureQueueTestPerformanceTest, casQueue);
+    }
+    public void lockQueueBenchmark(){
+                LockQueue<Rectangle> lockQueue = new LockQueue<>();
+        averageWorkerTime("LockQueue", this::pureQueueTestPerformanceTest, lockQueue);
+    }
+    public void linkedBlockingQueueBenchmark(){
+        LinkedBlockingQueue<Rectangle> linkedBlockingQueue = new LinkedBlockingQueue<>();
+        averageWorkerTime("BlockingQueue", this::blockingQueueTestPerformanceTest, linkedBlockingQueue);
+    }
+    public void betterCasQueueBenchmark(){
+        BetterCasQueue<Rectangle> betterCasQueue = new BetterCasQueue<>(THREAD_COUNT);
+        averageWorkerTime("BetterCasQueue", this::pureQueueTestPerformanceTest, betterCasQueue);
+    }
+    public void betterLockQueueBenchmark(){
+        BetterLockQueue<Rectangle> betterLockQueue = new BetterLockQueue<>();
+        averageWorkerTime("BetterLockQueue", this::pureQueueTestPerformanceTest, betterLockQueue);
     }
 
     private Long pureQueueTestPerformanceTest(IQueue<Rectangle> queue) {
