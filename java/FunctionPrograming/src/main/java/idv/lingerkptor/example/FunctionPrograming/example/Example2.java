@@ -9,7 +9,7 @@ import java.util.Random;
 @Slf4j
 public class Example2 {
 
-    public void doSomething() {
+    public void setWidthMustNotSetHeight() {
         BeanCollection.getRectangles().forEach(rectangle -> {
             int originalHeight = rectangle.getHeight();
             int changWidth = new Random().nextInt(100);

@@ -7,8 +7,7 @@ import java.util.Set;
 
 
 public class Example1 {
-    // 持續性的資料問題
-    public void doSomeThing(){
+    public void identifyCrisis(){
         Set<Rectangle> rectangleSet = new HashSet<>();
         Rectangle rectangle1 = new Rectangle(5,6);
         rectangleSet.add(rectangle1);

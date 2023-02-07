@@ -9,7 +9,7 @@ import java.util.List;
 @Slf4j
 public class Example3 {
 
-    public void doSomething() {
+    public void defensiveCopying() {
         List<Rectangle> originList = BeanCollection.getRectangles();
         for (Rectangle rectangle : originList) {
             log.info("Rectangle {width: {}, height: {}} class: {}",

@@ -10,19 +10,13 @@ public class PureFunctionDataStructuresApplication {
 
     public static void main(String[] args) throws CloneNotSupportedException {
 
-//        new Example1().doSomeThing();
-//		new Example2().doSomething();
-//        new Example3().doSomething();
-//        new Example4().doSomething();
-//        new Example5().doSomething();
+        new Example1().identifyCrisis();
+		new Example2().setWidthMustNotSetHeight();
+        new Example3().defensiveCopying();
+        new Example4().doSomething();
+        new Example5().doSomething();
         new PerformanceExample().doSomething();
 
-//        Rectangle rectangle = new Rectangle(1, 2);
-//        log.info("Rectangle width: {}, height: {}", rectangle.getWidth(), rectangle.getHeight());
-//        Rectangle clone = rectangle.clone();
-//        log.info("same obj ? {}",rectangle == clone);
-//        log.info("Rectangle width: {}, height: {}", clone.getWidth(), clone.getHeight());
-//		SpringApplication.run(PureFunctionDataStructuresApplication.class, args);
     }
 
 }
